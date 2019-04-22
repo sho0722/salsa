@@ -1,0 +1,173 @@
+body {
+    display: grid;
+    grid-template:
+    "header header header" 100px
+    "left main right" 1fr
+    "footer footer footer" 100px
+    /10% 80% 10%;
+}
+
+/* ここからheader */
+header {
+    grid-area: header;
+    background-color: #FF6600;
+    color: #FFF;
+}
+
+header h1 {
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+}
+
+header h2 {
+    text-align: center;
+}
+
+/* ここからサイドバー */
+
+.left {
+    grid-area: left;
+    background-image: url(../img/110551.jpg);
+    background-size: 40%;
+}
+
+.right {
+    grid-area: right;
+    background-image: url(../img/110554.jpg);
+    background-size: 40%;
+}
+
+.bg-mask {
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dancer {
+    width: 100%;
+    height: 300px;
+    animation: turn 3s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+/* ここからサイドバーのアニメーション */
+@keyframes turn{
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+/* ここまでサイドバーのアニメーション */
+
+.container {
+    grid-area: main;
+    background: url(../img/wood1.jpg );
+    background-attachment: fixed;
+}
+
+/* ここからフォントデザイン */
+.container h1 {
+    font-size: 45px;
+    font-family: YuGothic,'Yu Gothic',sans-serif;
+    color: #FF4F02;
+    text-align: center;
+    margin: 40px;
+}
+
+.container h2 {
+    font-size: 35px;
+    font-family: 'HanziPen SC','HanziPen TC',sans-serif;
+    text-align: center;
+    margin: 40px;
+}
+
+.container h3 {
+    font-size: 25px;
+    font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
+    margin: 15px;
+}
+
+.container p {
+    line-height: 20px;
+    font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
+    word-wrap: break-word;
+    padding: 15px 40px;
+}
+
+.container li {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.music {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+/* ここからinfo */
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.info iframe {
+    margin-right: 70px;
+}
+/* ここからレッスンスケジュール */
+.schedule {
+    display: grid;
+    grid-template-rows: repeat(3, 50px);
+    grid-template-columns: 1fr repeat(7, 12%);
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.schedule div {
+    border: 2px solid #000;
+    padding-top: 15px;
+}
+
+.schedule .beginner {
+    background-color: #FFFF99;
+}
+
+.schedule .middle {
+    background-color: #FFCC66;
+}
+
+.schedule .semi-pro {
+    background-color: #FF9966;
+}
+/* ここまでスケジュール */
+
+/* ここからfooter */
+footer {
+    grid-area: footer;
+    background-color: #FFC7AF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img {
+    height: 50px;
+    margin: 0 30px;
+}
+
+.addres {
+    text-align: center;
+    line-height: 25px;
+}
+
+.addres a {
+    margin-right: 15px;
+}
